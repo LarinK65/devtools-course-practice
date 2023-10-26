@@ -1,18 +1,18 @@
-// Copyright 2023 Matveyev Sergey
-
-#ifndef MODULES_AVL_TREE_INCLUDE_AVLTREE_APP_H_
-#define MODULES_AVL_TREE_INCLUDE_AVLTREE_APP_H_
-
+// Copyright 2023 Larin Konstantin
+#pragma once
 #include <string>
 
-class CLPApplication {
+#include "AVLTree.h"
+
+class application {
  public:
-  CLPApplication();
   std::string operator()(int argc, const char** argv);
 
  private:
-  std::string help();
-  std::string argument_error();
-};
+  void add(int64_t value);
+  void remove(int64_t value);
+  int64_t min();
+  int64_t max();
 
-#endif  //  MODULES_AVL_TREE_INCLUDE_AVLTREE_APP_H_
+  AVLTree<int64_t> set;
+};

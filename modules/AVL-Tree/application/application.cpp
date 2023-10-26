@@ -1,13 +1,18 @@
-// Copyright 2023 Matveyev Sergey
+// Copyright 2023 Larin Konstantin
 
-#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+
 #include <string>
 
 #include "include/AVLTree_app.h"
 
 int main(int argc, const char** argv) {
-  CLPApplication app;
-  std::string output = app(argc, argv);
-  std::cout << output << std::endl;
+  try {
+    std::cout << application { } (argc, argv);
+  } catch (const std::exception& e) {
+    std::cerr << e.what();
+    return EXIT_FAILURE;
+  }
   return 0;
 }
